@@ -12,6 +12,8 @@ endif
 
 let g:vim_bootstrap_langs = "{{ range $key, $value := .Language}}{{if $key}},{{end}}{{$value}}{{end}}"
 let g:vim_bootstrap_editor = "{{.Editor}}"				" nvim or vim
+let g:vim_bootstrap_theme = "{{.Theme}}"
+let g:vim_bootstrap_frams = "{{ range $key, $value := .Frameworks}}{{if $key}},{{end}}{{$value}}{{end}}"
 
 if !filereadable(vimplug_exists)
   if !executable(curl_exists)
@@ -45,9 +47,9 @@ Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'dense-analysis/ale'
 Plug 'Yggdroot/indentLine'
-Plug 'avelino/vim-bootstrap-updater'
-Plug 'sheerun/vim-polyglot'
+Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
+{{.BufferTheme.Bundle}}
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -68,9 +70,6 @@ Plug 'xolox/vim-session'
 "" Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-
-"" Color
-Plug 'tomasr/molokai'
 
 "*****************************************************************************
 "" Custom bundles
@@ -145,7 +144,7 @@ set ruler
 set number
 
 let no_buffers_menu=1
-silent! colorscheme molokai
+{{.BufferTheme.Coloscheme}}
 
 set mousemodel=popup
 set t_Co=256
@@ -185,7 +184,7 @@ endif
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
-{{if .Editor "nvim"}}
+{{if eq .Editor "nvim"}}
 au TermEnter * setlocal scrolloff=0
 au TermLeave * setlocal scrolloff=3
 {{else}}

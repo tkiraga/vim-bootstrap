@@ -23,9 +23,13 @@
     <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie/v9.css" /><![endif]-->
   </head>
   <body>
-
     <!-- Header -->
       <section id="header" class="dark">
+    <div>
+      <a href="https://github.com/editor-bootstrap/vim-bootstrap">
+        <img style="position: absolute; top: 0; right: 0; border: 0; z-index:1000;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+      </a>
+    </div>
         <header>
           <h1>Vim Bootstrap</h1>
           <p>A generator which provides a simple method of generating a .vimrc configuration for vim</p>
@@ -73,13 +77,29 @@
                   {{end}}
                      </div>
                    </div>
+              <h3>Select your theme</h3>
+              <div class="row">
+                <div class="12u">
+                  {{ range $theme := .Themes}}
+                            <div class="input-group">
+                                <span class="button-checkbox">
+                                  <div class="placeholder">
+                                      <img class="logo-icon {{if eq $theme "molokai"}}selected{{end}}" data-name="theme" data-type="radio" data-value="{{$theme}}" src="/assets/images/logo/color-scheme.png">
+                                  </div>
+                                  <p>{{$theme}}</p>
+                                  <input type="radio" name="theme" value="{{$theme}}" class="hidden" />
+                                </span>
+                            </div>
+                  {{end}}
+                     </div>
+                   </div>
               <h3>Select your editor</h3>
                     <div class="row">
                 <div class="12u">
                   <div class="input-group">
                     <span class="button-checkbox">
                       <div class="placeholder">
-                        <img class="logo-icon selected" data-type="radio" data-value="vim" src="/assets/images/logo/vim.png">
+                        <img class="logo-icon selected" data-name="editor" data-name="editor" data-type="radio" data-value="vim" src="/assets/images/logo/vim.png">
                       </div>
                       <p>vim</p>
                       <input type="radio" name="editor" value="vim" class="hidden" checked="checked" />
@@ -88,7 +108,7 @@
                   <div class="input-group">
                     <span class="button-checkbox">
                       <div class="placeholder">
-                        <img class="logo-icon" data-type="radio" data-value="nvim" src="/assets/images/logo/neovim.png">
+                        <img class="logo-icon" data-type="radio" data-name="editor" data-value="nvim" src="/assets/images/logo/neovim.png">
                       </div>
                       <p>neovim</p>
                       <input type="radio" name="editor" value="nvim" class="hidden" />
@@ -118,7 +138,7 @@
                   <header>
                     <h3>Fast Installation</h3>
                   </header>
-                  <p>Use your generated vimrc file following <a href="https://github.com/avelino/vim-bootstrap#installation">this instructions</a>.</p>
+                  <p>Use your generated vimrc file following <a href="https://github.com/editor-bootstrap/vim-bootstrap#installation">this instructions</a>.</p>
                 </section>
               </div>
               <div class="4u">
@@ -127,7 +147,7 @@
                   <header>
                     <h3>Learn more about Vim</h3>
                   </header>
-                  <p>See the <a href="https://github.com/avelino/vim-bootstrap#commands">commands list</a>.</p>
+                  <p>See the <a href="https://github.com/editor-bootstrap/vim-bootstrap#commands">commands list</a>.</p>
                 </section>
               </div>
               <div class="4u">
@@ -136,15 +156,15 @@
                   <header>
                     <h3>Customize your ViM</h3>
                   </header>
-                  <p>Create a <a href="https://github.com/avelino/vim-bootstrap/blob/master/vim_template/vimrc.local.example">~/.vimrc.local</a> and customize your own configuration.</p>
+                  <p>Create a <a href="https://github.com/editor-bootstrap/vim-bootstrap/blob/master/vim_template/vimrc.local.example">~/.vimrc.local</a> and customize your own configuration.</p>
                 </section>
               </div>
             </div>
             <div class="row">
               <div class="12u">
                 <footer>
-                  <a href="https://github.com/avelino/vim-bootstrap" class="button">Contribute</a>
-                  <a href="http://www.avelino.xxx/2015/03/church-vim" class="button">Church Vim</a>
+                  <a href="https://github.com/editor-bootstrap/vim-bootstrap" class="button">Contribute</a>
+                  <a href="http://www.avelino.run/church-vim" class="button">Church Vim</a>
                 </footer>
               </div>
             </div>
@@ -155,12 +175,12 @@
     <!-- Footer -->
       <section id="footer">
         <ul class="icons">
-          <li><a href="https://github.com/avelino/vim-bootstrap" class="fa fa-github solo"><span>GitHub</span></a></li>
+          <li><a href="https://github.com/editor-bootstrap/vim-bootstrap" class="fa fa-github solo"><span>GitHub</span></a></li>
         </ul>
         <div class="copyright">
           <ul class="menu">
             <li>&copy; Vim Bootstrap. All rights reserved.</li>
-            <li><a href="https://github.com/avelino/vim-bootstrap">Vim Bootstrap</a></li>
+            <li><a href="https://github.com/editor-bootstrap/vim-bootstrap">Vim Bootstrap</a></li>
           </ul>
         </div>
       </section>

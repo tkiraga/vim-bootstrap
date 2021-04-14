@@ -1,7 +1,6 @@
 # vim-bootstrap
 
-[![Join the chat at https://gitter.im/avelino/vim-bootstrap](https://badges.gitter.im/avelino/vim-bootstrap.svg)](https://gitter.im/avelino/vim-bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Open Source Helpers](https://www.codetriage.com/avelino/vim-bootstrap/badges/users.svg)](https://www.codetriage.com/avelino/vim-bootstrap)
+[![Join the chat at https://gitter.im/editor-bootstrap/vim](https://badges.gitter.im/editor-bootstrap/vim.svg)](https://gitter.im/editor-bootstrap/vim?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Vim Bootstrap provides a simple method for generating .vimrc configuration files for Vim, NeoVim, NeoVim-Qt, MacVim and GVim.
 
@@ -43,6 +42,13 @@ $ sudo dnf install ncurses-devel git ctags-etags curl
 $ sudo zypper in ncurses-devel git ctags curl
 ```
 
+### BSD
+
+* FreeBSD via *packages collection*
+```
+# pkg install git p5-Parse-ExuberantCTags ncurses curl
+```
+
 ### Python bundle (optionally)
 
 * pyflakes
@@ -65,7 +71,14 @@ $ pip3 install --user --upgrade neovim
 $ npm install -g elm-test
 $ npm install -g elm-oracle
 $ npm install -g elm-format@exp
+```
 
+### Rust
+
+* [rls](https://github.com/rust-lang/rls#setup)
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 ## Installation
@@ -99,8 +112,8 @@ Vim-bootstrap generator can accept URL params via request as example below.
 
 You can run vim-bootstrap Go package to generate a vimrc file, just download it:
 
-    go get github.com/avelino/vim-bootstrap
-    cd $GOPATH/src/github.com/avelino/vim-bootstrap
+    go get github.com/editor-bootstrap/vim-bootstrap
+    cd $GOPATH/src/github.com/editor-bootstrap/vim-bootstrap
     go build
 
 Inside vim-bootrap folder `cd vim-bootstrap` use `vim-bootstrap` module (file) like this example:
@@ -161,7 +174,7 @@ Commands | Descriptions
 <kbd>shift</kbd><kbd>tab</kbd> | previous tab navigate
 <kbd>,</kbd><kbd>e</kbd> | Find and open files
 <kbd>,</kbd><kbd>b</kbd> | Find file on buffer (open file)
-<kbd>,</kbd><kbd>c</kbd> | Close active buffer (clone file)
+<kbd>,</kbd><kbd>c</kbd> | Close active buffer (close file)
 <kbd>F2</kbd>  | Open tree navigate in actual opened file
 <kbd>F3</kbd>  | Open/Close tree navigate files
 <kbd>F4</kbd> | List all class and method, support for python, go, lua, ruby and php
@@ -255,6 +268,6 @@ Visit the following sites to learn more about Vim:
 * [Vimcasts](https://vimcasts.org)
 * [Byte of Vim](https://www.swaroopch.com/notes/Vim)
 * [MinuteVim Tricks](https://www.youtube.com/user/MinuteVimTricks)
-* [Join the Church of Vim, and you too can be a saint!](https://www.avelino.xxx/2015/03/church-vim)
+* [Join the Church of Vim, and you too can be a saint!](https://www.avelino.run/church-vim)
 * [Vim para noobs (in portuguese)](https://woliveiras.com.br/vimparanoobs/)
 * [Vimbook (in portuguese)](https://cassiobotaro.gitbooks.io/vimbook/content/)
