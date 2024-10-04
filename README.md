@@ -1,8 +1,10 @@
 # vim-bootstrap
 
-[![Join the chat at https://gitter.im/editor-bootstrap/vim](https://badges.gitter.im/editor-bootstrap/vim.svg)](https://gitter.im/editor-bootstrap/vim?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 Vim Bootstrap provides a simple method for generating .vimrc configuration files for Vim, NeoVim, NeoVim-Qt, MacVim and GVim.
+
+Want to generate your vim/neovim file? Access [here](https://vim-bootstrap.com/)!
+
+<a href="https://www.producthunt.com/posts/vim-bootstrap?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-vim-bootstrap" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=303760&theme=light" alt="vim-bootstrap - Your configuration generator for Neovim/Vim | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 
 ## Pre-requisites
 
@@ -34,7 +36,7 @@ $ sudo pacman -S git ctags ncurses curl
 * Fedora
 
 ```
-$ sudo dnf install ncurses-devel git ctags-etags curl
+$ sudo dnf install ncurses-devel git ctags curl
 ```
 
 * openSUSE
@@ -92,7 +94,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 * Execute ViM and it will install plugins automatically
 ```
-`vim`
+vim
 ```
 
 ### Fast-installation by URL parameters
@@ -116,7 +118,7 @@ You can run vim-bootstrap Go package to generate a vimrc file, just download it:
     cd $GOPATH/src/github.com/editor-bootstrap/vim-bootstrap
     go build
 
-Inside vim-bootrap folder `cd vim-bootstrap` use `vim-bootstrap` module (file) like this example:
+Inside vim-bootstrap folder `cd vim-bootstrap` use `vim-bootstrap` module (file) like this example:
 
     ./vim-bootstrap -langs=python,lua,ruby,javascript,haskell -frameworks vuejs -editor=vim > ~/.vimrc
 
@@ -146,13 +148,27 @@ $ sudo zypper ref
 $ sudo zypper in vim-bootstrap
 ```
 
+## Adding a new Theme
 
+Create a folder inside `generate/vim_template/themes/` with the name of your theme.
+
+    mkdir generate/vim_template/themes/my_theme
+
+Inside this folder, add a file called `mytheme.vim` with colorscheme instruction (optionally other configs).
+
+    echo "colorscheme mytheme" > generate/vim_template/themes/my_theme/mytheme.vim
+
+Add a `.bundle` extension file with instructions of how to install theme.
+
+    echo "Plug username/mytheme" > generate/vim_template/themes/my_theme/mytheme.vim.bundle
+
+Submit a PR and when approved new theme was added.
 
 ## Customization
 
 It's highly recommended to add customizations in a separate file. This way, you can maintain the original vim-bootstrap generated vimrc file and subsequent updates.
 
-For Vim users, the files available for customization are `~/.vimrc.local` and `~/.vimrc.local.bundles`. The former handles general configuration while the latter handle external Vim plugins through `vim-plug`.
+For Vim users, the files available for customization are `~/.vimrc.local` and `~/.vimrc.local.bundles`. The former handles general configuration while the latter handles external Vim plugins through `vim-plug`.
 
 NeoVim users can also customize their configuration by using `$XDG_CONFIG_HOME/nvim/local_init.vim` and `$XDG_CONFIG_HOME/nvim/local_bundles.vim`.
 
@@ -265,8 +281,8 @@ Visit the following sites to learn more about Vim:
 
 * [Learn Vim Progressively](https://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/)
 * [Vim Adventures](https://vim-adventures.com/)
-* [Vimcasts](https://vimcasts.org)
-* [Byte of Vim](https://www.swaroopch.com/notes/Vim)
+* [Vimcasts](http://vimcasts.org)
+* [Byte of Vim](https://vim.swaroopch.com/)
 * [MinuteVim Tricks](https://www.youtube.com/user/MinuteVimTricks)
 * [Join the Church of Vim, and you too can be a saint!](https://www.avelino.run/church-vim)
 * [Vim para noobs (in portuguese)](https://woliveiras.com.br/vimparanoobs/)
